@@ -20,7 +20,7 @@ build() {
 }
 
 package() {
-  make PREFIX=/usr DESTDIR="${pkgdir}" install
+  make SBINDIR=/usr/bin DESTDIR="${pkgdir}" install
 
   install -D -m644 "${srcdir}/fancontrol-c.service" "${pkgdir}/usr/lib/systemd/system/fancontrol-c.service"
 }
