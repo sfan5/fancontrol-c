@@ -1,0 +1,26 @@
+pkgname=fancontrol-c
+pkgver=1.0.0
+pkgrel=1
+pkgdesc="Temperature dependent fan speed control (C port of 'sensors' from lm_sensors)"
+arch=('i686' 'x86_64')
+url=""
+license=('GPL')
+depends=('lm_sensors')
+makedepends=()
+backup=()
+source=(fancontrol-c.service)
+sha1sums=('da370b813fb1298fdf0ec86a997cbd7b88c8aa02')
+
+prepare() {
+  cp ../../{Makefile,*.c} .
+}
+
+build() {
+  make
+}
+
+package() {
+  make PREFIX=/usr DESTDIR="${pkgdir}" install
+
+  install -D -m644 "${srcdir}/fancontrol-c.service" "${pkgdir}/usr/lib/systemd/system/fancontrol-c.service"
+}

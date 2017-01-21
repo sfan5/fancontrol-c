@@ -1,2 +1,6 @@
 *.o
 fancontrol-c
+
+pkg/src
+pkg/pkg
+pkg/*.pkg.tar.*

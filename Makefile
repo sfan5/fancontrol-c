@@ -1,7 +1,7 @@
 CFLAGS = -pipe -std=c99 -Wall -O2
 LDFLAGS =
 
-PREFIX ?= /usr
+PREFIX ?= /usr/local
 
 OBJ = main.o
 
@@ -17,6 +17,6 @@ clean:
 	rm -f $(OBJ)
 
 install:
-	install -pDm755 fi6s $(DESTDIR)$(PREFIX)/sbin/fancontrol-c
+	install -pDm755 fancontrol-c $(DESTDIR)$(PREFIX)/sbin/fancontrol-c
 
 .PHONY: clean

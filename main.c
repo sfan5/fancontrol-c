@@ -96,7 +96,7 @@ static int check_i2c_regex(const char *s)
 
 static int wfile(const char *path, int value)
 {
-	int fd = open(path, O_WRONLY | O_CREAT);
+	int fd = open(path, O_WRONLY | O_CREAT, 0644);
 	if(fd == -1)
 		return -1;
 	char tmp[12];
@@ -469,7 +469,7 @@ int main(int argc, char **argv)
 {
 	setvbuf(stdout, NULL, _IOLBF, 256);
 
-	if(argc > 1 && access(argv[1], F_OK) == 0) { 
+	if(argc > 1 && access(argv[1], F_OK) == 0) {
 		if(LoadConfig(argv[1]) == -1)
 			return 1;
 	} else {
