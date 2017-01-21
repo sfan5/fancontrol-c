@@ -3,11 +3,10 @@ pkgver=1.0.0
 pkgrel=1
 pkgdesc="Temperature dependent fan speed control (C port of 'sensors' from lm_sensors)"
 arch=('i686' 'x86_64')
-url=""
+url="https://github.com/sfan5/fancontrol-c"
 license=('GPL')
 depends=('lm_sensors')
 makedepends=()
-backup=()
 source=(fancontrol-c.service)
 sha1sums=('da370b813fb1298fdf0ec86a997cbd7b88c8aa02')
 
