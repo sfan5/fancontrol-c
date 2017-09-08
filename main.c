@@ -493,6 +493,7 @@ int main(int argc, char **argv)
 	struct stat s;
 	if(stat(dir, &s) == -1 || !S_ISDIR(s.st_mode)) {
 		fprintf(stderr, "No sensors found! (did you load the necessary modules?)\n");
+		return 1;
 	}
 	chdir(dir);
 
